@@ -3,6 +3,7 @@ import Generator.AllYourBaseGenerator
 import Generator.SayGenerator
 import Generator.BinarySearchGenerator
 import Generator.PythagoreanTripletGenerator
+import Generator.PhoneNumberGenerator
 import Generator.RomanNumeralsGenerator
 import Generator.GrainsGenerator
 import Generator.LeapGenerator
@@ -27,6 +28,7 @@ def dispatch : Std.HashMap String (introGenerator × testCaseGenerator × endBod
     ("Say", (SayGenerator.genIntro, SayGenerator.genTestCase, SayGenerator.genEnd)),
     ("BinarySearch", (BinarySearchGenerator.genIntro, BinarySearchGenerator.genTestCase, BinarySearchGenerator.genEnd)),
     ("PythagoreanTriplet", (PythagoreanTripletGenerator.genIntro, PythagoreanTripletGenerator.genTestCase, PythagoreanTripletGenerator.genEnd)),
+    ("PhoneNumber", (PhoneNumberGenerator.genIntro, PhoneNumberGenerator.genTestCase, PhoneNumberGenerator.genEnd)),
     ("RomanNumerals", (RomanNumeralsGenerator.genIntro, RomanNumeralsGenerator.genTestCase, RomanNumeralsGenerator.genEnd)),
     ("Grains", (GrainsGenerator.genIntro, GrainsGenerator.genTestCase, GrainsGenerator.genEnd)),
     ("Leap", (LeapGenerator.genIntro, LeapGenerator.genTestCase, LeapGenerator.genEnd)),
