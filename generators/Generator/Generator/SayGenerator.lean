@@ -1,8 +1,10 @@
 import Lean
 import Std
+import Helper
 
 open Lean
 open Std
+open Helper
 
 namespace SayGenerator
 
@@ -13,24 +15,6 @@ open LeanTest
 
 def {exercise.decapitalize}Tests : TestSuite :=
   (TestSuite.empty \"{exercise}\")"
-
-def getOk {α β} (except : Except α β) [Inhabited β] : β := except.toOption |> (·.get!)
-
-def errorToOption (expected : Json) : Option String :=
-  match expected.getObjVal? "error" with
-  | .error _ => some s!"{expected}"
-  | .ok _    => none
-
-def insertAllInputs (input : Json) : String :=
-  let map := getOk input.getObj?
-  map.values.map (fun val => s!"{val}") |> (String.intercalate " " .)
-
-def intLiteral (n : Int) : String :=
-  if n < 0 then s!"({n})"
-  else s!"{n}"
-
-def getFunName (property : Json) : String :=
-  property.compress.dropWhile (·=='"') |> (·.dropRightWhile (·=='"'))
 
 def genTestCase (exercise : String) (case : TreeMap.Raw String Json) : String :=
   let input := case.get! "input"

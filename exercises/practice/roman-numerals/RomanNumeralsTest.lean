@@ -60,5 +60,5 @@ def romanNumeralsTests : TestSuite :=
   |>.addTest "3999 is MMMCMXCIX" (do
       return assertEqual "MMMCMXCIX" (RomanNumerals.roman 3999))
 
-  def main : IO UInt32 := do
-    runTestSuitesWithExitCode [romanNumeralsTests]
+def main : IO UInt32 := do
+  runTestSuitesWithExitCode [romanNumeralsTests]

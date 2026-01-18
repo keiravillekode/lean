@@ -24,5 +24,5 @@ def leapTests : TestSuite :=
   |>.addTest "year divisible by 200, not divisible by 400 in common year" (do
       return assertEqual false (Leap.leapYear 1800))
 
-  def main : IO UInt32 := do
-    runTestSuitesWithExitCode [leapTests]
+def main : IO UInt32 := do
+  runTestSuitesWithExitCode [leapTests]

@@ -48,6 +48,5 @@ def triangleTests : TestSuite :=
   |>.addTest "scalene triangle -> sides may be floats" (do
       return assertEqual true (Triangle.scalene [0.5, 0.4, 0.6]))
 
-  def main : IO UInt32 := do
-    runTestSuitesWithExitCode [triangleTests]
-  
+def main : IO UInt32 := do
+  runTestSuitesWithExitCode [triangleTests]
